@@ -1,0 +1,54 @@
+schemaVersion: 2.0.0
+metadata:
+  name: open-liberty
+  version: 1.0.0
+  description: Java application stack using Open Liberty runtime
+attributes:
+  odo.autorestart: "false"
+starterProjects:
+  - name: openliberty
+    git:
+      location: https://github.com/odo-devfiles/openliberty-ex.git
+components:
+  - chePlugin:
+      id: redhat/java/latest
+      memoryLimit: 1512Mi
+  - container:
+      name: devruntime
+      image: jeevandroid/open-liberty-dev:latest
+      memoryLimit: 768Mi
+      mountSources: true
+      volumeMounts:
+      - name: m2
+        containerPath: /home/user/.m2
+      endpoints:
+      - name: 9080/http
+        port: 9080
+        attributes:
+          discoverable: false
+          public: true
+          protocol: http
+      - name: 9443/https
+        port: 9443
+        attributes:
+          discoverable: false
+          public: true
+          secure: true
+          protocol: http
+commands:
+  - exec:
+      name: devBuild
+      component: devruntime
+      commandLine: /artifacts/bin/build.sh
+      workingDir: /projects/openLiberty
+      group:
+          kind: build
+          isDefault: true
+  - exec:
+      name: devRun
+      component: devruntime
+      commandLine: /artifacts/bin/run.sh
+      workingDir: /projects/openLiberty
+      group:
+          kind: run
+          isDefault: true

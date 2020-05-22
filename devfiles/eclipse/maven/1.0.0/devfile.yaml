@@ -1,0 +1,35 @@
+schemaVersion: 2.0.0
+metadata:
+  name: maven
+  version: 1.0.0
+components:
+  - container:
+      name: tools
+      image: quay.io/eclipse/che-java11-maven:nightly
+      memoryLimit: 512Mi
+      mountSources: true
+      endpoints:
+        - name: '8080/http'
+          port: 8080
+          attributes:
+            discoverable: false
+            public: true
+            protocol: http
+      volumeMounts:
+        - name: m2
+          containerPath: /home/user/.m2
+commands:
+  - exec:
+      name: devBuild
+      component: tools
+      commandLine: "mvn package"
+      group:
+        kind: build
+        isDefault: true
+  - exec:
+      name: devRun
+      component: tools
+      commandLine: "java -jar target/*.jar"
+      group:
+        kind: run
+        isDefault: true

@@ -1,0 +1,38 @@
+schemaVersion: 2.0.0
+metadata:
+  name: quarkus
+  version: 1.0.0
+  website: https://quarkus.io
+components:
+  - container:
+      name: tools
+      image: quay.io/eclipse/che-quarkus:nightly
+      memoryLimit: 1512Mi
+      mountSources: true
+      volumeMounts:
+        - name: m2
+          containerPath: /home/user/.m2
+      endpoints:
+        - name: '8080/http'
+          port: 8080
+          attributes:
+            discoverable: false
+            public: true
+            protocol: http
+commands:
+  - exec:
+      name: devInit
+      component: tools
+      commandLine: "mvn compile"
+      group:
+        kind: build
+        isDefault: true
+  - exec:
+      name: devRun
+      component: tools
+      commandLine: "mvn quarkus:dev"
+      attributes:
+          restart: "false"
+      group:
+        kind: run
+        isDefault: true
