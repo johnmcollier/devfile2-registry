@@ -10,24 +10,25 @@ components:
       mountSources: true
       endpoints:
         - name: '8080/http'
-          port: 8080
-          attributes:
+          configuration:
             discoverable: false
             public: true
-            protocol: http
+            protocol: tcp
+            scheme: http
+          targetPort: 8080
       volumeMounts:
         - name: m2
-          containerPath: /home/user/.m2
+          path: /home/user/.m2
 commands:
   - exec:
-      name: devBuild
+      id: devBuild
       component: tools
       commandLine: "mvn package"
       group:
         kind: build
         isDefault: true
   - exec:
-      name: devRun
+      id: devRun
       component: tools
       commandLine: "java -jar target/*.jar"
       group:
