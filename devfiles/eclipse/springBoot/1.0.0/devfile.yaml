@@ -19,7 +19,7 @@ components:
       mountSources: true
       volumeMounts:
         - name: springbootpvc
-          containerPath: /data
+          path: /data
   - container:
       name: runtime
       image: maysunfaisal/springbootruntime
@@ -28,18 +28,19 @@ components:
       args: [ '-f', '/dev/null']
       endpoints:
         - name: '8080/tcp'
-          port: 8080
-          attributes:
+          configuration:
             discoverable: false
             public: true
-            protocol: http
+            protcol: tcp
+            scheme: http
+          targetPort: 8080
       mountSources: false
       volumeMounts:
         - name: springbootpvc
-          containerPath: /data
+          path: /data
 commands:
   - exec:
-      name: devBuild
+      id: devBuild
       component: tools
       commandLine: "/artifacts/bin/build-container-full.sh"
       workingDir: /projects/springbootproject
@@ -47,9 +48,9 @@ commands:
         kind: build
         isDefault: true
   - exec:
-      name: devRun
+      id: devRun
       component: runtime
-      command: "/artifacts/bin/start-server.sh"
+      commandLine: "/artifacts/bin/start-server.sh"
       workingDir: /
       group:
         kind: run

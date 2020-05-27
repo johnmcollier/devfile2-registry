@@ -14,14 +14,15 @@ components:
       mountSources: true
       endpoints:
         - name: "nodejs"
-          port: 3000
-          attributes:
+          configuration:
             discoverable: false
             public: true
-            protocol: http
+            protocol: tcp
+            scheme: http
+          targetPort: 3000
 commands:
   - exec:
-      name: devBuild
+      id: devBuild
       component: runtime
       commandLine: npm install
       workingDir: ${CHE_PROJECTS_ROOT}/nodejs-web-app/app
@@ -29,7 +30,7 @@ commands:
         kind: build
         isDefault: true
   - exec:
-      name: devRun
+      id: devRun
       component: runtime
       commandLine: nodemon app.js
       workingDir: ${CHE_PROJECTS_ROOT}/nodejs-web-app/app
