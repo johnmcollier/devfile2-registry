@@ -6,7 +6,7 @@ metadata:
 attributes:
   odo.autorestart: "false"
 projects:
-  - name: openLiberty
+  - name: openliberty
     git:
       location: https://github.com/odo-devfiles/openliberty-ex.git
 components:
@@ -42,7 +42,7 @@ commands:
       id: devBuild
       component: devruntime
       commandLine: /artifacts/bin/build.sh
-      workingDir: /projects/openLiberty
+      workingDir: /projects/openliberty
       group:
           kind: build
           isDefault: true
@@ -50,7 +50,7 @@ commands:
       id: devRun
       component: devruntime
       commandLine: /artifacts/bin/run.sh
-      workingDir: /projects/openLiberty
+      workingDir: /projects/openliberty
       group:
           kind: run
           isDefault: true
