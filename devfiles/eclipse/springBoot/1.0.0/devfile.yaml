@@ -2,7 +2,7 @@ schemaVersion: 2.0.0
 metadata:
   name: java-spring-boot
   version: 1.0.0
-starterProjects:
+projects:
   - name: springbootproject
     git:
       location: "https://github.com/odo-devfiles/springboot-ex.git"

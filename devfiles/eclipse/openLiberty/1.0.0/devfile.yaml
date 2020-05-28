@@ -5,8 +5,8 @@ metadata:
   description: Java application stack using Open Liberty runtime
 attributes:
   odo.autorestart: "false"
-starterProjects:
-  - name: openliberty
+projects:
+  - name: openLiberty
     git:
       location: https://github.com/odo-devfiles/openliberty-ex.git
 components:
