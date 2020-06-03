@@ -22,14 +22,14 @@ components:
           targetPort: 8080
 commands:
   - exec:
-      id: devInit
+      id: init-compile
       component: tools
       commandLine: "mvn compile"
       group:
         kind: build
         isDefault: true
   - exec:
-      id: devRun
+      id: dev-run
       component: tools
       commandLine: "mvn quarkus:dev"
       attributes:

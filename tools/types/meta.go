@@ -2,6 +2,7 @@ package types
 
 // Meta represents meta.yaml file
 type Meta struct {
+	Name              string   `yaml:"name,omitempty" json:"name,omitempty"`
 	DisplayName       string   `yaml:"displayName,omitempty" json:"displayName,omitempty"`
 	Description       string   `yaml:"description,omitempty" json:"description,omitempty"`
 	Tags              []string `yaml:"tags,omitempty" json:"tags,omitempty"`
