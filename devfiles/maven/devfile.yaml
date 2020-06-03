@@ -9,26 +9,23 @@ components:
       memoryLimit: 512Mi
       mountSources: true
       endpoints:
-        - name: '8080/http'
+        - name: 'http-8080'
           configuration:
-            discoverable: false
             public: true
-            protocol: tcp
-            scheme: http
           targetPort: 8080
       volumeMounts:
         - name: m2
           path: /home/user/.m2
 commands:
   - exec:
-      id: devBuild
+      id: mvn-package
       component: tools
       commandLine: "mvn package"
       group:
         kind: build
         isDefault: true
   - exec:
-      id: devRun
+      id: run
       component: tools
       commandLine: "java -jar target/*.jar"
       group:

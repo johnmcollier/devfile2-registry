@@ -2,10 +2,6 @@ schemaVersion: 2.0.0
 metadata:
   name: nodejs
   version: 1.0.0
-projects:
-  - name: nodejs-web-app
-    git:
-      location: "https://github.com/odo-devfiles/nodejs-ex.git"
 components:
   - container:
       name: runtime
@@ -13,27 +9,22 @@ components:
       memoryLimit: 1024Mi
       mountSources: true
       endpoints:
-        - name: "nodejs"
+        - name: "http-3000"
           configuration:
-            discoverable: false
             public: true
-            protocol: tcp
-            scheme: http
           targetPort: 3000
 commands:
   - exec:
-      id: devBuild
+      id: install
       component: runtime
       commandLine: npm install
-      workingDir: ${CHE_PROJECTS_ROOT}/nodejs-web-app/app
       group:
         kind: build
         isDefault: true
   - exec:
-      id: devRun
+      id: run
       component: runtime
-      commandLine: nodemon app.js
-      workingDir: ${CHE_PROJECTS_ROOT}/nodejs-web-app/app
+      commandLine: npm run
       group:
         kind: run
         isDefault: true
