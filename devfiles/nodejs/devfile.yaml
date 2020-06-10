@@ -2,6 +2,10 @@ schemaVersion: 2.0.0
 metadata:
   name: nodejs
   version: 1.0.0
+projects:
+  - name: nodejs-web-app
+    git:
+      location: "https://github.com/odo-devfiles/nodejs-ex.git"
 components:
   - container:
       name: runtime
@@ -18,13 +22,15 @@ commands:
       id: install
       component: runtime
       commandLine: npm install
+      workingDir: ${CHE_PROJECTS_ROOT}/nodejs-web-app/app
       group:
         kind: build
         isDefault: true
   - exec:
       id: run
       component: runtime
-      commandLine: npm run
+      commandLine: nodemon app.js
+      workingDir: ${CHE_PROJECTS_ROOT}/nodejs-web-app/app
       group:
         kind: run
         isDefault: true
