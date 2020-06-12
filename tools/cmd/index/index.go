@@ -8,7 +8,7 @@ import (
 	"log"
 	"path/filepath"
 
-	"github.com/elsony/devfile-registry/tools/types"
+	"github.com/odo-devfiles/registry/tools/types"
 	"gopkg.in/yaml.v2"
 )
 
