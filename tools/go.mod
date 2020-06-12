@@ -1,4 +1,4 @@
-module github.com/elsony/devfile-registry/tools
+module github.com/odo-devfiles/registry/tools
 
 go 1.14
 
