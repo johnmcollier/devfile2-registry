@@ -1,4 +1,4 @@
-name: quarkus
+name: java-quarkus
 displayName: Quarkus Java
 description: Upstream Quarkus with Java+GraalVM
 tags: ["Java", "Quarkus"]

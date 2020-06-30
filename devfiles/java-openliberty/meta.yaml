@@ -1,4 +1,4 @@
-name: openLiberty
+name: java-openliberty
 displayName: "Open Liberty"
 description: "Open Liberty microservice in Java"
 language: "java"

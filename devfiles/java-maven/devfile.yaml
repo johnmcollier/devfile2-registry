@@ -1,6 +1,6 @@
 schemaVersion: 2.0.0
 metadata:
-  name: maven
+  name: java-maven
   version: 1.0.0
 components:
   - container:

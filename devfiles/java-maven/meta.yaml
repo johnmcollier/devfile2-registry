@@ -1,4 +1,4 @@
-name: maven
+name: java-maven
 displayName: Maven Java
 description: Upstream Maven and OpenJDK 11
 tags: ["Java", "Maven"]
