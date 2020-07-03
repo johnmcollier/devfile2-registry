@@ -1,0 +1,19 @@
+dist: xenial
+sudo: required
+
+language: go
+go: "1.12.x"
+
+jobs:
+  include:
+    # Run a few odo integration tests
+    - stage: test
+      name: "Registry e2e tests"
+      script:
+        - ./scripts/testing.sh
+        - cd $GOPATH/src/github.com/openshift/odo
+        - ./scripts/oc-cluster.sh
+        - oc login -u developer
+        - make goget-tools
+        - make bin
+        - odo logout
