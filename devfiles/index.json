@@ -10,7 +10,7 @@
     "projectType": "maven",
     "language": "java",
     "links": {
-      "self": "/devfiles/maven/devfile.yaml"
+      "self": "/devfiles/java-maven/devfile.yaml"
     }
   },
   {
@@ -35,7 +35,7 @@
     "projectType": "docker",
     "language": "java",
     "links": {
-      "self": "/devfiles/openLiberty/devfile.yaml"
+      "self": "/devfiles/java-openliberty/devfile.yaml"
     }
   },
   {
@@ -49,7 +49,7 @@
     "projectType": "quarkus",
     "language": "java",
     "links": {
-      "self": "/devfiles/quarkus/devfile.yaml"
+      "self": "/devfiles/java-quarkus/devfile.yaml"
     }
   },
   {
@@ -65,7 +65,7 @@
     "projectType": "spring",
     "language": "java",
     "links": {
-      "self": "/devfiles/springBoot/devfile.yaml"
+      "self": "/devfiles/java-springboot/devfile.yaml"
     }
   }
 ]
