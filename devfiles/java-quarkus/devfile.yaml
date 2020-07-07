@@ -1,6 +1,6 @@
 schemaVersion: 2.0.0
 metadata:
-  name: quarkus
+  name: java-quarkus
   version: 1.0.0
   website: https://quarkus.io
 components:

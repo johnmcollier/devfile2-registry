@@ -1,6 +1,6 @@
 schemaVersion: 2.0.0
 metadata:
-  name: springBoot
+  name: java-springboot
   version: 1.0.0
 projects:
   - name: springbootproject
