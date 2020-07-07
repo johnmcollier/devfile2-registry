@@ -1,6 +1,6 @@
 [
   {
-    "name": "maven",
+    "name": "java-maven",
     "displayName": "Maven Java",
     "description": "Upstream Maven and OpenJDK 11",
     "tags": [
@@ -29,7 +29,7 @@
     }
   },
   {
-    "name": "openLiberty",
+    "name": "java-openliberty",
     "displayName": "Open Liberty",
     "description": "Open Liberty microservice in Java",
     "projectType": "docker",
@@ -39,7 +39,7 @@
     }
   },
   {
-    "name": "quarkus",
+    "name": "java-quarkus",
     "displayName": "Quarkus Java",
     "description": "Upstream Quarkus with Java+GraalVM",
     "tags": [
@@ -53,7 +53,7 @@
     }
   },
   {
-    "name": "springBoot",
+    "name": "java-springboot",
     "displayName": "Spring Boot®",
     "description": "Spring Boot® using Java",
     "tags": [
