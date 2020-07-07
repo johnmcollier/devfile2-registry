@@ -14,21 +14,6 @@
     }
   },
   {
-    "name": "nodejs",
-    "displayName": "NodeJS Express Web Application",
-    "description": "Stack with NodeJS 10",
-    "tags": [
-      "NodeJS",
-      "Express",
-      "ubi8"
-    ],
-    "projectType": "nodejs",
-    "language": "nodejs",
-    "links": {
-      "self": "/devfiles/nodejs/devfile.yaml"
-    }
-  },
-  {
     "name": "java-openliberty",
     "displayName": "Open Liberty",
     "description": "Open Liberty microservice in Java",
@@ -66,6 +51,21 @@
     "language": "java",
     "links": {
       "self": "/devfiles/java-springboot/devfile.yaml"
+    }
+  },
+  {
+    "name": "nodejs",
+    "displayName": "NodeJS Runtime",
+    "description": "Stack with NodeJS 12",
+    "tags": [
+      "NodeJS",
+      "Express",
+      "ubi8"
+    ],
+    "projectType": "nodejs",
+    "language": "nodejs",
+    "links": {
+      "self": "/devfiles/nodejs/devfile.yaml"
     }
   }
 ]
