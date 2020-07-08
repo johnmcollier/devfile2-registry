@@ -10,7 +10,7 @@ jobs:
     - stage: test
       name: "Registry e2e tests"
       script:
-        - ./scripts/testing.sh
+        - ./scripts/odoclone.sh
         - cd $GOPATH/src/github.com/openshift/odo
         - ./scripts/oc-cluster.sh
         - oc login -u developer
