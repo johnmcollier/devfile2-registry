@@ -6,14 +6,22 @@ go: "1.12.x"
 
 jobs:
   include:
+    - stage: setup
+      script:
+        - export PATH="$PATH:$GOPATH/bin"
+
     # Run a few odo integration tests
     - stage: test
       name: "Registry e2e tests"
       script:
         - ./scripts/odoclone.sh
         - cd $GOPATH/src/github.com/openshift/odo
-        - ./scripts/oc-cluster.sh
-        - oc login -u developer
         - make goget-tools
         - make bin
+        - sudo cp odo /usr/bin/odo
+        - ./scripts/oc-cluster.sh
+        - oc login -u developer
         - odo logout
+
+    # TODO
+    # Run registry integration tests
