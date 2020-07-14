@@ -10,8 +10,6 @@ components:
       mountSources: true
       endpoints:
         - name: 'http-8080'
-          configuration:
-            public: true
           targetPort: 8080
       volumeMounts:
         - name: m2

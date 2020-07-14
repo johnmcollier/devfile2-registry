@@ -25,8 +25,6 @@ components:
       args: [ '-f', '/dev/null']
       endpoints:
         - name: '8080/tcp'
-          configuration:
-            public: true
           targetPort: 8080
       mountSources: false
       volumeMounts:
