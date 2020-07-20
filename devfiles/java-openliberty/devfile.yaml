@@ -19,11 +19,6 @@ components:
       mountSources: true
       endpoints:
         - name: 9080/tcp
-          configuration:
-            discoverable: false
-            public: true
-            protocol: tcp
-            scheme: http
           targetPort: 9080
 commands:
 # devInit currently not functional in odo devfile v2 - will re-enable when available

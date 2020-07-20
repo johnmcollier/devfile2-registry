@@ -18,11 +18,6 @@ components:
           path: /home/user/.m2
       endpoints:
         - name: '8080/http'
-          configuration:
-            discoverable: false
-            public: true
-            protocol: tcp
-            scheme: http
           targetPort: 8080
 commands:
   - exec:
