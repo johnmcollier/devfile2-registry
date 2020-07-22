@@ -14,6 +14,8 @@ components:
       volumeMounts:
         - name: m2
           path: /home/user/.m2
+  - volume:
+      name: m2
 commands:
   - exec:
       id: mvn-package

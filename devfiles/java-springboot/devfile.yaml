@@ -30,6 +30,9 @@ components:
       volumeMounts:
         - name: springbootpvc
           path: /data
+  - volume:
+      name: springbootpvc
+      size: 4Gi
 commands:
   - exec:
       id: devBuild
