@@ -47,7 +47,7 @@ commands:
                                                             && mvn -Dmaven.repo.local=/mvn/repository package
                                                             && touch ./.disable-bld-cmd;
                    fi
-      workingDir: /projects/user-app
+      workingDir: /projects
       attributes:
         restart: "false"
       group:
@@ -57,7 +57,7 @@ commands:
       id: devRun
       component: devruntime 
       commandLine: mvn -Dmaven.repo.local=/mvn/repository -Dliberty.runtime.version=20.0.0.6 -DhotTests=true liberty:dev
-      workingDir: /projects/user-app
+      workingDir: /projects
       attributes:
         restart: "false"
       group:
