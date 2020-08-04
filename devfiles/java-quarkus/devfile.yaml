@@ -27,7 +27,7 @@ commands:
       id: init-compile
       component: tools
       commandLine: "mvn compile"
-      workingDir: $CHE_PROJECTS_ROOT/quarkus-ex
+      workingDir: $PROJECTS_ROOT
   - exec:
       id: dev-run
       component: tools
@@ -37,7 +37,7 @@ commands:
       group:
         kind: run
         isDefault: true
-      workingDir: $CHE_PROJECTS_ROOT/quarkus-ex
+      workingDir: $PROJECTS_ROOT
       
 events:
   postStart:
