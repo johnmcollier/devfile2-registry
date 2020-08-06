@@ -42,8 +42,8 @@ commands:
                        echo "found the disable file" && echo "devBuild command will not run" && exit 0;
                    else
                        echo "will run the devBuild command" && echo "...moving liberty"
-                                                            && mkdir -p /projects/user-app/target/liberty
-                                                            && mv /opt/ol/wlp /projects/user-app/target/liberty
+                                                            && mkdir -p /projects/target/liberty
+                                                            && mv /opt/ol/wlp /projects/target/liberty
                                                             && mvn -Dmaven.repo.local=/mvn/repository package
                                                             && touch ./.disable-bld-cmd;
                    fi
