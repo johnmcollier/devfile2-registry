@@ -37,7 +37,7 @@ commands:
   - exec:
       id: devBuild
       component: devruntime 
-      commandLine: if [ -e /projects/user-app/.disable-bld-cmd ];
+      commandLine: if [ -e /projects/.disable-bld-cmd ];
                    then
                        echo "found the disable file" && echo "devBuild command will not run" && exit 0;
                    else
