@@ -4,7 +4,7 @@ metadata:
   version: 1.0.0
   alpha.build-dockerfile: "https://raw.githubusercontent.com/odo-devfiles/registry/master/devfiles/nodejs/build/Dockerfile"
   alpha.deployment-manifest: "https://raw.githubusercontent.com/odo-devfiles/registry/master/devfiles/nodejs/deploy/deployment-manifest.yaml"
-projects:
+starterProjects:
   - name: nodejs-starter
     git:
       location: "https://github.com/odo-devfiles/nodejs-ex.git"
