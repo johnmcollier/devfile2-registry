@@ -13,10 +13,11 @@ type Meta struct {
 }
 
 // MetaIndex is one item in index.json
-// This is Meta extended with Links field
+// This is Meta extended with Links and Projects fields
 type MetaIndex struct {
 	Meta
-	Links Links `yaml:"links,omitempty" json:"links,omitempty"`
+	Links    Links    `yaml:"links,omitempty" json:"links,omitempty"`
+	Projects []string `yaml:"projects,omitempty" json:"projects,omitempty"`
 }
 type Links struct {
 	Self string `yaml:"self,omitempty" json:"self,omitempty"`

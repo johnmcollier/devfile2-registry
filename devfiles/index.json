@@ -21,7 +21,10 @@
     "language": "java",
     "links": {
       "self": "/devfiles/java-openliberty/devfile.yaml"
-    }
+    },
+    "projects": [
+      "user-app"
+    ]
   },
   {
     "name": "java-quarkus",
@@ -35,7 +38,10 @@
     "language": "java",
     "links": {
       "self": "/devfiles/java-quarkus/devfile.yaml"
-    }
+    },
+    "projects": [
+      "quarkus-ex"
+    ]
   },
   {
     "name": "java-springboot",
@@ -51,7 +57,10 @@
     "language": "java",
     "links": {
       "self": "/devfiles/java-springboot/devfile.yaml"
-    }
+    },
+    "projects": [
+      "springbootproject"
+    ]
   },
   {
     "name": "nodejs",
@@ -66,6 +75,9 @@
     "language": "nodejs",
     "links": {
       "self": "/devfiles/nodejs/devfile.yaml"
-    }
+    },
+    "projects": [
+      "nodejs-starter"
+    ]
   }
 ]

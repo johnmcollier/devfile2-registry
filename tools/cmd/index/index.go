@@ -26,6 +26,8 @@ func genIndex(dir string) ([]types.MetaIndex, error) {
 	for _, file := range dirs {
 		if file.IsDir() {
 			var meta types.Meta
+			var devfile types.Devfile200
+
 			metaFile, err := ioutil.ReadFile(filepath.Join(dir, file.Name(), "meta.yaml"))
 			if err != nil {
 				return nil, err
@@ -37,11 +39,22 @@ func genIndex(dir string) ([]types.MetaIndex, error) {
 
 			self := fmt.Sprintf("/%s/%s/%s", filepath.Base(dir), file.Name(), "devfile.yaml")
 
+			// Parse the devfile and retrieve its list of projects
+			devfileFile, err := ioutil.ReadFile(filepath.Join(dir, file.Name(), "devfile.yaml"))
+			if err != nil {
+				return nil, err
+			}
+			err = yaml.Unmarshal(devfileFile, &devfile)
+			if err != nil {
+				return nil, err
+			}
+
 			metaIndex := types.MetaIndex{
 				Meta: meta,
 				Links: types.Links{
 					Self: self,
 				},
+				Projects: getDevfileProjects(devfile),
 			}
 			index = append(index, metaIndex)
 		}
@@ -77,4 +90,13 @@ func main() {
 		log.Fatal(err)
 
 	}
+}
+
+// getDevfileProjects iterates through a devfiles list of projects and returns a list of their names
+func getDevfileProjects(devfile types.Devfile200) []string {
+	var projects []string
+	for _, project := range devfile.Projects {
+		projects = append(projects, project.Name)
+	}
+	return projects
 }
