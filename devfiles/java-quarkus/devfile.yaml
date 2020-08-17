@@ -38,7 +38,17 @@ commands:
         kind: run
         isDefault: true
       workingDir: $PROJECTS_ROOT
-      
+  - exec:
+      id: dev-debug
+      component: tools
+      commandLine: "mvn quarkus:dev -Ddebug=${DEBUG_PORT}"
+      attributes:
+          restart: "false"
+      group:
+        kind: debug
+        isDefault: true
+      workingDir: $PROJECTS_ROOT
+        
 events:
   postStart:
     - init-compile
