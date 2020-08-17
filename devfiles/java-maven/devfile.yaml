@@ -31,3 +31,10 @@ commands:
       group:
         kind: run
         isDefault: true
+  - exec:
+      id: debug
+      component: tools
+      commandLine: "java -Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=${DEBUG_PORT},suspend=n -jar target/*.jar"
+      group:
+        kind: debug
+        isDefault: true
