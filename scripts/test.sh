@@ -79,8 +79,6 @@ test() {
         error=true
     fi
 
-    odo log
-
     odo delete -f -a
     odo project delete -f "$devfileName"
 
