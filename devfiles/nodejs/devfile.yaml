@@ -8,6 +8,9 @@ starterProjects:
   - name: nodejs-starter
     git:
       location: "https://github.com/odo-devfiles/nodejs-ex.git"
+  - name: second-starter
+    git:
+      location: "https://github.com/johnmcollier/nodejs-ex.git"
 components:
   - container:
       name: runtime
